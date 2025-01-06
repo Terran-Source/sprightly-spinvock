@@ -1,0 +1,5 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"lang": "Español",
+	"hello_world": "Hola, {name} desde español!"
+}
