@@ -1,5 +1,9 @@
 {
+	"arrowParens": "always",
+	"svelteBracketNewLine": false,
 	"useTabs": true,
+	"tabWidth": 2,
+	"semi": true,
 	"singleQuote": true,
 	"trailingComma": "es5",
 	"printWidth": 100,

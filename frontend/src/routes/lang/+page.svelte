@@ -6,7 +6,7 @@
 	const switchToLanguage = (newLanguage: ln.AvailableLanguageTag) => {
 		const canonicalPath = i18n.route($page.url.pathname);
 		const localisedPath = i18n.resolveRoute(canonicalPath, newLanguage);
-		goto(localisedPath);
+		return goto(localisedPath);
 		// ln.setLanguageTag(newLanguage);
 	};
 </script>
