@@ -9,5 +9,6 @@
   "author": {
     "name": "turn-a-round",
     "email": "patra.tamal@gmail.com"
-  }
+  },
+  "wailsjsdir": "./frontend/src/lib"
 }
