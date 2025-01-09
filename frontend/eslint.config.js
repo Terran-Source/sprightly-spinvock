@@ -15,20 +15,23 @@ export default ts.config(
 	prettier,
 	...svelte.configs['flat/prettier'],
 	{
+		ignores: ['*.cjs'],
+	},
+	{
 		languageOptions: {
 			globals: {
 				...globals.browser,
-				...globals.node
-			}
-		}
+				...globals.node,
+			},
+		},
 	},
 	{
 		files: ['**/*.svelte'],
 
 		languageOptions: {
 			parserOptions: {
-				parser: ts.parser
-			}
-		}
+				parser: ts.parser,
+			},
+		},
 	}
 );

@@ -15,8 +15,6 @@
 <h1>{msg.hello_world({ name: 'World User' })}</h1>
 <div>
 	{#each ln.availableLanguageTags as lang}
-		<button class="btn rounded-sm" onclick={() => switchToLanguage(lang)}>{lang}</button>
+		<button type="button" class="btn rounded variant-ghost-tertiary" onclick={() => switchToLanguage(lang)}>{lang}</button>
 	{/each}
-	<!-- <button onclick={() => switchToLanguage('en')}>English</button>
-	<button onclick={() => switchToLanguage('es')}>Spanish</button> -->
 </div>

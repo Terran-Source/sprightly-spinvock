@@ -1,42 +1,140 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@tailwind base;
 @layer base {
-    @font-face {
-        font-family: "Nunito";
-        font-style: normal;
-        font-weight: 400;
-        src: local(""),
-            url("$assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
-    }
+	@font-face {
+		font-family: 'Nunito';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local(''),
+			url('$assets/fonts/nunito-v16-latin-regular.woff2') format('woff2');
+	}
 
-    html {
-        background-color: rgba(27, 38, 54, 1);
-        text-align: center;
-        color: white;
-    }
-
-    body {
-        margin: 0;
-        color: white;
-        font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-            "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-            sans-serif;
-    }
+	a {
+		@apply font-semibold italic;
+	}
 }
 
+@tailwind components;
 @layer components {
-    #app {
+	/* #app {
         height: 100vh;
         text-align: center;
-    }
+    } */
+	html,
+	body,
+	body > div.svelte-body {
+		@apply h-full overflow-hidden;
+	}
 
-    a {
-        @apply font-semibold italic;
-    }
+	.input-group {
+		.btn-icon {
+			@apply rounded-none;
+		}
+	}
 
-    .btn {
-        @apply py-2 px-4 border border-blue-500 hover:border-blue-900 shadow;
-    }
+	.btn-icon-xs {
+		@apply aspect-square w-[24px] text-xs;
+	}
+
+	.pill {
+		@apply rounded-full px-3 py-1 text-sm font-semibold;
+	}
+
+	.pill-primary {
+		@apply pill variant-filled-primary;
+	}
+
+	.pill-secondary {
+		@apply pill variant-filled-secondary;
+	}
+
+	.pill-tertiary {
+		@apply pill variant-filled-tertiary;
+	}
+
+	.pill-success {
+		@apply pill variant-filled-success;
+	}
+
+	.pill-warning {
+		@apply pill variant-filled-warning;
+	}
+
+	.pill-error {
+		@apply pill variant-filled-error;
+	}
+
+	.pill-surface {
+		@apply pill variant-filled-surface;
+	}
+
+	figure.avatar {
+		@apply bg-tertiary-300-600-token bg-opacity-50;
+
+		text.avatar-text {
+			@apply text-on-tertiary-token;
+		}
+	}
+
+	.accordion {
+		.accordion-control {
+			/* @apply bg-gradient-to-b from-primary-300 hover:from-secondary-300 to-tertiary-300 hover:to-tertiary-800 text-on-primary-token hover:text-on-tertiary-token; */
+			@apply variant-ringed-secondary hover:variant-ringed-tertiary;
+		}
+
+		.accordion-lead {
+			svg {
+				@apply btn-icon-xs;
+			}
+		}
+	}
+}
+
+@tailwind utilities;
+@layer utilities {
+	.v-middle {
+		@apply flex place-items-center;
+	}
+
+	.grid-container-max {
+		@apply text-token grid grid-cols-1 gap-2;
+	}
+
+	.grid-container-max-1 {
+		@apply grid-container-max;
+	}
+
+	.grid-container-max-2 {
+		@apply grid-container-max lg:grid-cols-2;
+	}
+
+	.grid-container-max-3 {
+		@apply grid-container-max md:grid-cols-2 lg:grid-cols-3;
+	}
+
+	.grid-container-max-4 {
+		@apply grid-container-max md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+	}
+
+	.grid-container-max-6 {
+		@apply grid-container-max grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6;
+	}
+
+	.grid-container-max-8 {
+		@apply grid-container-max grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8;
+	}
+
+	.grid-container-max-12 {
+		@apply grid-container-max grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12;
+	}
+
+	.grid-container-max-1 > :not([hidden]),
+	.grid-container-max-2 > :not([hidden]),
+	.grid-container-max-3 > :not([hidden]),
+	.grid-container-max-4 > :not([hidden]),
+	.grid-container-max-6 > :not([hidden]),
+	.grid-container-max-8 > :not([hidden]),
+	.grid-container-max-12 > :not([hidden]) {
+		@apply justify-self-center;
+	}
 }

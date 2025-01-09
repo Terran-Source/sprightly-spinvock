@@ -1,0 +1,27 @@
+/* .form-container {
+	> div {
+		@apply mx-3;
+	}
+} */
+.group-container {
+	@apply w-full max-w-sm text-sm;
+}
+.input-container {
+	@apply group-container label;
+	.input-group {
+		> input,
+		> select {
+			@apply text-sm !min-w-0;
+		}
+		> .text-btn {
+			@apply w-auto aspect-auto leading-[43px] p-2;
+		}
+		> .btn-icon {
+			@apply btn-icon-xs;
+		}
+	}
+}
+
+.icon-swatch {
+	@apply btn-icon m-2 text-warning-800 animate-pulse;
+}
