@@ -2,4 +2,4 @@
 export { i18n } from './i18n';
 export * as msg from './paraglide/messages';
 export * as ln from './paraglide/runtime';
-export * as api from './wailsjs/go/main/App';
+export * as api from './bindings/spinvock';

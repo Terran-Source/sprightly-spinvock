@@ -9,6 +9,15 @@
 			url('$assets/fonts/nunito-v16-latin-regular.woff2') format('woff2');
 	}
 
+	@font-face {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		src:
+			local(''),
+			url('$assets/fonts/Inter-Medium.ttf') format('truetype');
+	}
+
 	a {
 		@apply font-semibold italic;
 	}

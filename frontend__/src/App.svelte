@@ -1,21 +1,19 @@
 <script lang="ts">
-	import { api } from '$lib';
-	import { Events } from '@wailsio/runtime';
-	import wailsLogo from '$assets/images/wails.png';
-	import svelteLogo from '$assets/images/svelte.svg';
-	import './style.css';
+	import { GreetService } from "./lib/bindings/spinvock";
+	import { Events } from "@wailsio/runtime";
 
-	let name: string = '';
-	let result: string = 'Please enter your name below 👇';
-	let time: string = 'Listening for Time event...';
+	let name: string = "";
+	let result: string = "Please enter your name below 👇";
+	let time: string = "Listening for Time event...";
 
 	const doGreet = (): void => {
 		let localName = name;
 		if (!localName) {
-			localName = 'anonymous';
+			localName = "anonymous";
 		}
-		api.GreetService.Greet(localName)
+		GreetService.Greet(localName)
 			.then((resultValue: string) => {
+				console.info({resultValue})
 				result = resultValue;
 			})
 			.catch((err: any) => {
@@ -23,7 +21,7 @@
 			});
 	};
 
-	Events.On('time', (timeValue: any) => {
+	Events.On("time", (timeValue: any) => {
 		time = timeValue.data;
 	});
 </script>
@@ -31,14 +29,13 @@
 <div class="container">
 	<div>
 		<span wml-openURL="https://wails.io">
-			<img src={wailsLogo} class="logo" alt="Wails logo" />
+			<img src="/wails.png" class="logo" alt="Wails logo" />
 		</span>
 		<span wml-openURL="https://svelte.dev">
-			<img src={svelteLogo} class="logo svelte" alt="Svelte logo" />
+			<img src="/svelte.svg" class="logo svelte" alt="Svelte logo" />
 		</span>
 	</div>
 	<h1>Wails + Svelte</h1>
-	<p>Go <a href="/">Home</a></p>
 	<div class="result">{result}</div>
 	<div class="card">
 		<div class="input-box">
