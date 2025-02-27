@@ -7,7 +7,7 @@ export const skCustomTheme: CustomThemeConfig = {
 		'--theme-font-family-base': `"Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif`,
 		'--theme-font-family-heading': `"Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif`,
 		'--theme-font-color-base': '0 0 0',
-		'--theme-font-color-dark': '255 255 255',
+		'--theme-font-color-dark': '253 245 255',
 		'--theme-rounded-base': '9999px',
 		'--theme-rounded-container': '8px',
 		'--theme-border-base': '1px',
